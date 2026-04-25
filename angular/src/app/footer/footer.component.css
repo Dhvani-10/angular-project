@@ -1,0 +1,23 @@
+footer {
+  background: linear-gradient(
+    90deg,
+    #3a6ea5,
+    #5f72be,   
+    #50c9ff    
+  );
+  padding: 25px 0;
+  color: white;
+  display: flex;              
+  justify-content: center;    
+  align-items: center;       
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+

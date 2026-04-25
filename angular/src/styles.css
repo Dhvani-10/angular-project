@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+p{
+    font-size: 20;
+    font-family: calibri;
+    text-align: justify;
+    padding: 1%;
+}
+
+.btn
+{
+    width: 100px;
+    padding: 1%;
+    font-size: 20px;
+    font-family: calibri;
+    color: navy;
+    margin-top: 10px;
+    margin-right:5px ;
+    background-color: lightblue;
+    border-radius: 20px;
+    border: 1px solid gray;
+}
+.maindiv
+{
+    width: 96%;
+    margin-left:2%;
+    float: left;
+    background-color: lightgray;
+}
+
+.rowdiv
+{
+    width: 98%;
+    padding:1%;
+    float: left;
+}
+
+.h1
+{
+    font-family:Impact;
+    color:navy;
+    text-align: center;
+    font-size: 40px;
+}
+
+.h2
+{
+    font-family:Helvetica;
+    color:blueviolet;
+    text-align: center;
+}
+
+.fbox{
+    width: 30%;
+    float: left;
+    padding: 2%;
+}
+
+.fgrp
+{
+    width: 100%;
+    float: left;
+}
+
+.tbox{
+    width: 98%;
+    padding: 1%;
+    font-size: 20px;
+    font-family: calibri;
+    color: navy;
+}
+.lbl
+{
+    width: 98%;
+    padding: 1%;
+    font-size: 20px;
+    font-family: calibri;
+    color: navy;
+}
+.frmhead
+{
+    font-family: calibri;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    margin:0px!important;
+
+}
+.tab
+{
+    width: 100%;
+    border: 3px solid black;
+}
+.tab td,th{
+    padding:5px;
+    border: 1px solid black;
+    font-family: calibri;
+    font-size: 20px;
+    color: navy;
+}
+
+.lbl
+{
+  font-size: 18;
+  font-family: calibri;
+  color: navy;
+  text-align: center;
+}

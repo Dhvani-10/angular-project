@@ -1,0 +1,77 @@
+.complaint-container {
+  padding: 30px;
+  background: #f4f8fb;
+}
+
+h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.top-btn {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  background: #004080;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.back-btn:hover {
+  background: #002b55;
+}
+
+.complaint-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.complaint-table th {
+  background: #004080;
+  color: white;
+  padding: 10px;
+}
+
+.complaint-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.pending {
+  color: orange;
+  font-weight: bold;
+}
+
+.approved {
+  color: green;
+  font-weight: bold;
+}
+
+.rejected {
+  color: red;
+  font-weight: bold;
+}
+
+.approve-btn {
+  background: green;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.reject-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

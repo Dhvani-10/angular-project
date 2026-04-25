@@ -1,0 +1,47 @@
+<div class="participants-container">
+
+  <h2 class="page-title">Event Participants</h2>
+
+  <div class="back-box">
+    <button class="back-btn" (click)="goBack()">
+      ← Back to Event Management
+    </button>
+  </div>
+
+  <div class="participants-table" *ngIf="participants.length > 0; else noData">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Event</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of participants">
+          <td>{{p.name}}</td>
+          <td>{{p.email}}</td>
+          <td>{{p.phone}}</td>
+          <td>{{p.event}}</td>
+          <td [ngClass]="{
+            'status-pending': p.status==='Pending',
+            'status-approved': p.status==='Approved',
+            'status-rejected': p.status==='Rejected'
+          }">{{p.status}}</td>
+          <td>
+            <button class="approve-btn" (click)="approve(p)" [disabled]="p.status==='Approved'">Approve</button>
+            <button class="reject-btn" (click)="reject(p)" [disabled]="p.status==='Rejected'">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noData>
+    <div class="no-data">No participants have registered yet.</div>
+  </ng-template>
+
+</div>

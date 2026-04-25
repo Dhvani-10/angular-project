@@ -1,0 +1,45 @@
+<div class="complaint-container">
+  <h2>File a Complaint</h2>
+
+  <form (ngSubmit)="submitComplaint()" #complaintForm="ngForm">
+
+    <label for="name">Name*:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="complaint.name" placeholder="Enter your name" required />
+
+    <label for="email">Email*:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="complaint.email" placeholder="Enter your email" required />
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" [(ngModel)]="complaint.subject" placeholder="Enter subject" />
+
+    <label for="area">Area*:</label>
+    <input type="text" id="area" name="area" [(ngModel)]="complaint.area" placeholder="Enter your area" required />
+
+    <label for="message">Complaint*:</label>
+    <textarea id="message" name="message" [(ngModel)]="complaint.message" placeholder="Enter your complaint" required></textarea>
+
+    <button type="submit" [disabled]="!complaintForm.form.valid">Submit</button>
+  </form>
+
+  <div class="track-box">
+    <h3>Track Your Complaint</h3>
+
+    <input type="email" [(ngModel)]="trackEmail" placeholder="Enter Email">
+
+    <input type="text" [(ngModel)]="trackArea" placeholder="Enter Area">
+
+    <button (click)="trackComplaint()">Track Status</button>
+
+    <div *ngIf="complaintStatus" class="status-result">
+      <p><b>Name:</b> {{complaintStatus.name}}</p>
+      <p><b>Subject:</b> {{complaintStatus.subject}}</p>
+      <p><b>Area:</b> {{complaintStatus.area}}</p>
+      <p><b>Status:</b> 
+        <span [ngClass]="complaintStatus.status.toLowerCase()">
+          {{complaintStatus.status}}
+        </span>
+      </p>
+    </div>
+  </div>
+
+</div>

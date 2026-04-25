@@ -1,0 +1,56 @@
+<div class="manage-container">
+
+  <h2>Manage Registered Users</h2>
+
+  <div class="top-btn">
+    <button class="back-btn" (click)="goToDashboard()">
+      ← Back to Dashboard
+    </button>
+  </div>
+
+  <table class="user-table">
+    <tr>
+      <th>Full Name</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Aadhaar</th>
+      <th>Address</th>
+      <th>Status</th>
+      <th>Delete</th>
+    </tr>
+
+    <tr *ngFor="let i of data">
+      <td>{{ i.fullname }}</td>
+      <td>{{ i.username }}</td>
+      <td>{{ i.password }}</td>
+      <td>{{ i.gender }}</td>
+      <td>{{ i.dob }}</td>
+      <td>{{ i.mobile }}</td>
+      <td>{{ i.email }}</td>
+      <td>{{ i.aadhaar }}</td>
+      <td>{{ i.address }}</td>
+
+      <td>
+        <button 
+          class="block-btn"
+          [ngClass]="i.status === 'blocked' ? 'unblock' : 'block'"
+          (click)="toggleBlock(i)"
+        >
+          {{ i.status === 'blocked' ? 'Unblock' : 'Block' }}
+        </button>
+      </td>
+
+      <td>
+        <button class="delete-btn" (click)="rowdelete(i._id)">
+          Delete
+        </button>
+      </td>
+
+    </tr>
+  </table>
+
+</div>

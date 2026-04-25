@@ -1,0 +1,146 @@
+<div class="events-container">
+  <h2 class="page-title">Events</h2>
+
+  <div class="event-grid">
+    <div class="event-card" *ngFor="let e of eventList">
+      <h3>{{e.title}}</h3>
+      <p><b>Date:</b> {{e.startDate}} to {{e.endDate}}</p>
+      <p><b>Location:</b> {{e.location}}</p>
+      <p><b>Organizer:</b> {{e.organizer}}</p>
+
+      <button class="register-btn"
+        [disabled]="e.isExpired"
+        (click)="openForm(e)">
+        {{ e.isExpired ? 'Event Ended' : 'Register Now' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="form-overlay" *ngIf="showForm">
+    <div class="form-box">
+
+      <form (ngSubmit)="submitForm()">
+
+      <h3>Event Registration</h3>
+      <p class="step-indicator">Step {{step}} of 2</p>
+
+    
+      <div *ngIf="step === 1">
+
+        <label>Name</label>
+        <input type="text"
+        name="name"
+        [(ngModel)]="participant.name"
+        placeholder="Enter your name"
+        required>
+
+        <label>Email</label>
+        <input type="email"
+        name="email"
+        [(ngModel)]="participant.email"
+        placeholder="Enter your email"
+        required>
+
+        <label>Phone</label>
+        <input type="text"
+        name="phone"
+        [(ngModel)]="participant.phone"
+        placeholder="Enter your phone number"
+        required>
+
+      </div>
+
+      <div *ngIf="step === 2">
+
+        <label>Event</label>
+        <input type="text"
+        name="event"
+        [(ngModel)]="participant.event"
+        readonly>
+
+        <label>How did you hear about us?</label>
+        <select name="source"
+        [(ngModel)]="participant.source">
+          <option value="">Select...</option>
+          <option value="social">Social Media</option>
+          <option value="friend">Friend</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label>Which session do you want to attend?</label>
+        <select name="session"
+        [(ngModel)]="participant.session">
+          <option value="morning">Morning</option>
+          <option value="afternoon">Afternoon</option>
+          <option value="full">Full Day</option>
+        </select>
+
+        <label>
+          <input type="checkbox"
+          name="agree"
+          [(ngModel)]="participant.agree">
+          I agree to terms & conditions
+        </label>
+
+      </div>
+
+      <div class="form-buttons">
+
+        <button
+        type="button"
+        *ngIf="step > 1"
+        class="prev-btn"
+        (click)="prevStep()">
+        ← Previous
+        </button>
+
+        <button
+        type="button"
+        *ngIf="step < 2"
+        class="next-btn"
+        (click)="nextStep()">
+        Next →
+        </button>
+
+        <button
+        type="submit"
+        *ngIf="step === 2"
+        class="submit-btn">
+        Submit
+        </button>
+
+        <button
+        type="button"
+        class="cancel-btn"
+        (click)="closeForm()">
+        Cancel
+        </button>
+
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <div class="status-check-box">
+    <h3>Check Registration Status</h3>
+
+    <input type="email"
+      [(ngModel)]="checkEmail"
+      placeholder="Enter your email">
+
+    <button (click)="checkStatus()">Check Status</button>
+
+    <div *ngIf="statusResult" class="status-result">
+      <p><b>Name:</b> {{statusResult.name}}</p>
+      <p><b>Event:</b> {{statusResult.event}}</p>
+      <p><b>Status:</b>
+        <span [ngClass]="statusResult.status.toLowerCase()">
+          {{statusResult.status}}
+        </span>
+      </p>
+    </div>
+  </div>
+
+</div>

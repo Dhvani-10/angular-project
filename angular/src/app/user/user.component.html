@@ -1,0 +1,55 @@
+<table class="tab" cellspacing="0">
+  <tr>
+    <th>Full Name</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Gender</th>
+    <th>DOB</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Aadhaar</th>
+    <th>Address</th>
+    <th>Delete</th>
+    <th>Update</th>
+  </tr>
+
+  <tr *ngFor="let i of data">
+    <td>{{ i.fullname }}</td>
+    <td>{{ i.username }}</td>
+    <td>{{ i.password }}</td>
+    <td>{{ i.gender }}</td>
+    <td>{{ i.dob }}</td>
+    <td>{{ i.mobile }}</td>
+    <td>{{ i.email }}</td>
+    <td>{{ i.aadhaar }}</td>
+    <td>{{ i.address }}</td>
+
+    <td>
+      <button (click)="rowdelete(i._id)">Delete</button>
+    </td>
+
+    <td>
+      <!-- IMPORTANT: FULL ROW PASS -->
+      <button (click)="rowupdate(i)">Update</button>
+    </td>
+  </tr>
+</table>
+
+<hr>
+
+<h3>Update User</h3>
+
+<form (ngSubmit)="updateSubmit()">
+
+  <input [(ngModel)]="editdata.fullname" name="fullname" placeholder="Full Name"><br><br>
+  <input [(ngModel)]="editdata.username" name="username" placeholder="Username"><br><br>
+  <input [(ngModel)]="editdata.password" name="password" placeholder="Password"><br><br>
+  <input [(ngModel)]="editdata.gender" name="gender" placeholder="Gender"><br><br>
+  <input [(ngModel)]="editdata.dob" name="dob" type="date"><br><br>
+  <input [(ngModel)]="editdata.mobile" name="mobile" placeholder="Mobile"><br><br>
+  <input [(ngModel)]="editdata.email" name="email" placeholder="Email"><br><br>
+  <input [(ngModel)]="editdata.aadhaar" name="aadhaar" placeholder="Aadhaar"><br><br>
+  <textarea [(ngModel)]="editdata.address" name="address" placeholder="Address"></textarea><br><br>
+
+  <button type="submit">Update</button>
+</form>

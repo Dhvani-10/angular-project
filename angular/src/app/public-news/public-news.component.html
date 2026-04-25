@@ -1,0 +1,31 @@
+<div class="latest-news-section">
+
+<h2 class="news-title">News</h2>
+
+<div class="news-card" *ngFor="let n of newsList">
+
+<h3>{{n.title}}</h3>
+
+<p class="news-desc">
+{{n.description}}
+</p>
+
+<div class="news-footer">
+
+<span class="news-date">
+📅 {{n.publishDate}}
+</span>
+
+<span class="news-dept">
+🏢 {{n.department}}
+</span>
+
+</div>
+
+</div>
+
+<div *ngIf="newsList.length == 0" class="no-news">
+No latest news available.
+</div>
+
+</div>

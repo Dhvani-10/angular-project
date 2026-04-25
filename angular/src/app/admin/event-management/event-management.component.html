@@ -1,0 +1,112 @@
+<div class="event-container">
+
+  <h2 class="page-title">Event Management</h2>
+
+  <div class="dashboard-box">
+    <button class="dashboard-btn" (click)="goDashboard()">
+      ← Back to Dashboard
+    </button>
+  </div>
+
+  <div *ngIf="message" class="success-message">
+    {{message}}
+  </div>
+
+  <div class="event-form">
+    <h3>{{ editMode ? 'Edit Event' : 'Create New Event' }}</h3>
+
+    <form #eventForm="ngForm"
+          ngNativeValidate
+          (ngSubmit)="createEvent()">
+
+      <label>Event Title</label>
+      <input type="text"
+             name="title"
+             [(ngModel)]="event.title"
+             required
+             pattern="[A-Za-z0-9 ]+"
+             title="Enter valid event title">
+
+      <label>Location</label>
+      <input type="text"
+             name="location"
+             [(ngModel)]="event.location"
+             required>
+
+      <label>Start Date</label>
+      <input type="date"
+             name="startDate"
+             [(ngModel)]="event.startDate"
+             required
+             [min]="today">
+
+      <label>End Date</label>
+      <input type="date"
+             name="endDate"
+             [(ngModel)]="event.endDate"
+             required
+             [min]="today">
+
+      <label>Time</label>
+      <input type="time"
+             name="time"
+             [(ngModel)]="event.time"
+             required>
+
+      <label>Organizer</label>
+      <input type="text"
+             name="organizer"
+             [(ngModel)]="event.organizer"
+             required
+             pattern="[A-Za-z ]+"
+             title="Only alphabets allowed">
+
+      <label>Description</label>
+      <textarea name="description"
+                [(ngModel)]="event.description"
+                required
+                rows="3"></textarea>
+
+      <button type="submit" class="create-btn">
+        {{ editMode ? 'Update Event' : 'Create Event' }}
+      </button>
+
+    </form>
+  </div>
+
+  <div class="participants-box">
+    <button class="view-btn" (click)="viewParticipants()">
+      View Participants
+    </button>
+  </div>
+
+  <div class="event-table">
+    <h3>Event List</h3>
+
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th>Organizer</th>
+        <th>Action</th>
+      </tr>
+
+      <tr *ngFor="let e of eventList">
+        <td>{{e.title}}</td>
+        <td>{{e.startDate | date:'mediumDate'}}</td>
+        <td>{{e.endDate | date:'mediumDate'}}</td>
+        <td>{{ formatTime(e.time) }}</td>
+        <td>{{e.location}}</td>
+        <td>{{e.organizer}}</td>
+        <td>
+          <button class="edit-btn" (click)="editEvent(e)">Edit</button>
+          <button class="delete-btn" (click)="deleteEvent(e._id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

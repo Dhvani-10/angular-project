@@ -1,0 +1,31 @@
+.navbar {
+  background: linear-gradient(
+    90deg,
+    #3a6ea5,   
+    #5f72be,  
+    #50c9ff   
+  );
+  padding: 20px 0;                      
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;            
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;                         
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ffd;                           
+}

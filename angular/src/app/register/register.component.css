@@ -1,0 +1,90 @@
+.form-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #4b2a7b;
+  font-weight: 600;
+  font-size: 30px;   
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+label {
+  font-weight: 600;   
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 18px;   
+}
+
+input,
+select,
+textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 17px;      
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #6a11cb;
+  outline: none;
+  box-shadow: 0 0 5px rgba(106,17,203,0.3);
+}
+
+.button-group {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  margin-right: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: #ccc;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-secondary:hover {
+  background: #bbb;
+}

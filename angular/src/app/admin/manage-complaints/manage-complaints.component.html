@@ -1,0 +1,47 @@
+<div class="complaint-container">
+
+  <h2>Manage Complaints</h2>
+  
+  <div class="top-btn">
+    <button class="back-btn" (click)="goToDashboard()">
+      ← Back to Dashboard
+    </button>
+  </div>
+
+  <table class="complaint-table">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Message</th>
+      <th>Status</th>
+      <th>Approve</th>
+      <th>Reject</th>
+    </tr>
+
+    <tr *ngFor="let c of data">
+      <td>{{ c.name }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.subject }}</td>
+      <td>{{ c.message }}</td>
+      <td>
+        <span [ngClass]="{
+          'pending': c.status === 'Pending',
+          'approved': c.status === 'Approved',
+          'rejected': c.status === 'Rejected'
+        }">
+          {{ c.status }}
+        </span>
+      </td>
+
+      <td>
+        <button class="approve-btn" (click)="approve(c._id)">Approve</button>
+      </td>
+
+      <td>
+        <button class="reject-btn" (click)="reject(c._id)">Reject</button>
+      </td>
+    </tr>
+  </table>
+
+</div>

@@ -1,0 +1,106 @@
+<div class="details-container">
+ <button routerLink="/service" class="back-btn">⬅ Back to Services</button>
+
+  <div *ngIf="type === 'income'">
+  <h2>Income Certificate Service</h2>
+
+  <p>
+    Income Certificate is an official document issued by the Municipal Corporation
+    to certify the annual income of a citizen. It is required for government schemes,
+    scholarships, fee concessions, and welfare benefits.
+  </p>
+
+  <h3>Required Documents</h3>
+  <ul>
+    <li>Aadhar Card (Applicant)</li>
+    <li>Address Proof (Electricity Bill / Ration Card)</li>
+    <li>Income Proof (Salary Slip / Self Declaration / Employer Certificate)</li>
+    <li>Passport Size Photograph</li>
+  </ul>
+
+  <h3>Processing Time</h3>
+  <p>5 – 7 Working Days</p>
+
+  <h3>Eligibility</h3>
+  <p>Applicant must be a resident of Navsari Municipal Corporation area.</p>
+</div>
+
+
+  <div *ngIf="type === 'property-tax'">
+  <h2>Property Tax Management</h2>
+
+  <p>
+    Property Tax is a mandatory annual tax collected by the Municipal Corporation
+    for maintenance of roads, sanitation, water supply, and other civic facilities.
+  </p>
+
+  <h3>Required Details</h3>
+  <ul>
+    <li>Property ID / Assessment Number</li>
+    <li>Owner Name</li>
+    <li>Property Address</li>
+    <li>Mobile Number</li>
+  </ul>
+
+  <h3>Additional Information</h3>
+  <p>
+    Tax can be paid online or at authorized municipal centers. Late payment may
+    include penalty charges.
+  </p>
+</div>
+
+
+  <div *ngIf="type === 'water'">
+  <h2>Water Supply Services</h2>
+
+  <p>
+    This service allows citizens to apply for new water connections, update billing
+    details, and report water supply issues within Navsari Municipal Corporation area.
+  </p>
+
+  <h3>Required Documents</h3>
+  <ul>
+    <li>Aadhar Card</li>
+    <li>Address Proof</li>
+    <li>Property Ownership Proof / Rent Agreement</li>
+    <li>Passport Size Photograph</li>
+  </ul>
+
+  <h3>Services Available</h3>
+  <ul>
+    <li>New Water Connection</li>
+    <li>Bill Correction</li>
+    <li>Complaint Registration</li>
+  </ul>
+</div>
+
+
+  <div *ngIf="type === 'building'">
+  <h2>Building Plan Approval</h2>
+
+  <p>
+    Building Plan Approval is required before starting any residential or
+    commercial construction within municipal limits. It ensures compliance
+    with safety and urban planning rules.
+  </p>
+
+  <h3>Required Documents</h3>
+  <ul>
+    <li>Property Ownership Document</li>
+    <li>Architect Approved Building Plan</li>
+    <li>Land Tax Receipt</li>
+    <li>Identity Proof (Aadhar Card)</li>
+    <li>Site Map / Layout Plan</li>
+  </ul>
+
+  <h3>Approval Process</h3>
+  <ul>
+    <li>Application Submission</li>
+    <li>Document Verification</li>
+    <li>Site Inspection</li>
+    <li>Final Approval by Authority</li>
+  </ul>
+
+  <h3>Processing Time</h3>
+  <p>10 – 15 Working Days</p>
+</div>

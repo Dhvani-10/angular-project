@@ -1,0 +1,59 @@
+<div class="admin-dashboard">
+
+  <div class="dashboard-header">
+    <h1>Admin Dashboard</h1>
+    <p>Welcome Admin! Manage the entire system from here.</p>
+  </div>
+
+  <div class="dashboard-cards">
+
+    <div class="card blue-card">
+      <h3>Manage Users</h3>
+      <p>View, update or delete registered users.</p>
+
+      <button class="action-btn" onclick="location.href='/admin/manage-user'">
+        Manage Users
+      </button>
+    </div>
+
+    <div class="card blue-card">
+      <h3>Manage Complaints</h3>
+      <p>Check and resolve user complaints.</p>
+
+      <button class="action-btn" onclick="location.href='/admin/manage-complaints'">
+        Manage Complaints
+      </button>
+    </div>
+
+    <!-- News Management -->
+    <div class="card news-card">
+      <h3>News Management</h3>
+      <p>Create and manage public announcements and updates.</p>
+
+      <button class="action-btn" (click)="goToCreateNews()">
+        Create News
+      </button>
+    </div>
+
+    <!-- Event Management -->
+    <div class="card event-card">
+      <h3>Event Management</h3>
+      <p>Create and manage municipal events and programs.</p>
+
+      <button class="action-btn" (click)="goToCreateEvent()">
+        Create Event
+      </button>
+    </div>
+
+    <div class="card logout-card">
+      <h3>Logout</h3>
+      <p>Securely logout from admin panel.</p>
+
+      <button class="action-btn" (click)="logout()">
+        Logout
+      </button>
+    </div>
+
+  </div>
+
+</div>

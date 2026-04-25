@@ -1,0 +1,125 @@
+.admin-dashboard {
+  padding: 40px;
+  background: #f4f6f9;
+  min-height: 80vh;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  font-size: 32px;
+  color: #2c3e50;
+}
+
+.dashboard-header p {
+  color: #555;
+  font-size: 16px;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  width: 260px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #1e88e5;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.card button {
+  padding: 8px 18px;
+  border: none;
+  background-color: #1e88e5;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background-color: #1565c0;
+}
+
+.logout-card h3 {
+  color: #e53935;
+}
+
+.logout-card button {
+  background-color: #e53935;
+}
+
+.logout-card button:hover {
+  background-color: #b71c1c;
+}
+
+.blue-card h3 {
+  color: #1e88e5; 
+}
+
+.blue-card button {
+  background-color: #1e88e5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.blue-card button:hover {
+  background-color: #1565c0;
+}
+
+/* News Card */
+
+.news-card h3{
+  color:#8e24aa;
+}
+
+.news-card button{
+  background:#8e24aa;
+}
+
+.news-card button:hover{
+  background:#6a1b9a;
+}
+
+/* Event Card */
+
+.event-card h3{
+  color:#43a047;
+}
+
+.event-card button{
+  background:#43a047;
+}
+
+.event-card button:hover{
+  background:#2e7d32;
+}

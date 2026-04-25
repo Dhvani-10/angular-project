@@ -1,0 +1,67 @@
+.projects-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.projects-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.project-card {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-card img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: cover;
+}
+
+.project-details {
+  flex: 1;
+  padding: 20px;
+}
+
+.project-details h2 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.project-details p {
+  margin: 6px 0;
+}
+
+.project-details .budget {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.project-details .timeline {
+  font-style: italic;
+  color: #555;
+}
+
+@media(max-width:768px){
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-card img {
+    max-width: 100%;
+  }
+}

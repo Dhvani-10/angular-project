@@ -1,0 +1,16 @@
+<div class="projects-container">
+  <h1>Projects Completed in 2026</h1>
+
+  <div class="project-card" *ngFor="let project of projects">
+    <img [src]="project.image" [alt]="project.title">
+    <div class="project-details">
+      <h2>{{ project.title }}</h2>
+      <p><strong>Organizer:</strong> {{ project.organizer }}</p>
+      <p><strong>Location:</strong> {{ project.location }}</p>
+      <p class="timeline"><strong>Timeline:</strong> {{ project.timeline }}</p>
+      <p class="budget"><strong>Budget:</strong> {{ project.budget }}</p>
+      <p>{{ project.description }}</p>
+    </div>
+  </div>
+</div>
+

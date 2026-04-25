@@ -1,0 +1,98 @@
+<div class="news-container">
+
+  <h2 class="page-title">News Management</h2>
+
+  <div class="dashboard-box">
+    <button type="button" class="dashboard-btn" (click)="goDashboard()">← Back to Dashboard</button>
+  </div>
+
+  <div *ngIf="successMessage" class="success-box">{{successMessage}}</div>
+
+  <div class="news-form">
+    <h3>{{editMode ? 'Update News' : 'Create News'}}</h3>
+
+    <form #newsForm="ngForm"
+          ngNativeValidate
+          (ngSubmit)="saveNews()">
+
+      <label>News Title</label>
+      <input type="text"
+             [(ngModel)]="news.title"
+             name="title"
+             required
+             pattern="[A-Za-z0-9 ]+"
+             title="Enter valid news title">
+
+      <label>Category</label>
+      <select [(ngModel)]="news.category"
+              name="category"
+              required>
+        <option value="">Select Category</option>
+        <option>Announcement</option>
+        <option>Public Notice</option>
+        <option>City Update</option>
+      </select>
+
+      <label>Description</label>
+      <textarea [(ngModel)]="news.description"
+                name="description"
+                required
+                title="Enter description"></textarea>
+
+      <label>Publish Date</label>
+      <input type="date"
+             [(ngModel)]="news.publishDate"
+             name="publishDate"
+             required
+             [min]="today"
+             [max]="today">
+
+      <label>Department</label>
+      <input type="text"
+             [(ngModel)]="news.department"
+             name="department"
+             required
+             pattern="[A-Za-z ]+"
+             title="Only alphabets allowed">
+
+      <label>Status</label>
+      <select [(ngModel)]="news.status"
+              name="status"
+              required>
+        <option value="">Select Status</option>
+        <option>Active</option>
+        <option>Inactive</option>
+      </select>
+
+      <button type="submit" class="save-btn">
+        {{editMode ? 'Update News' : 'Create News'}}
+      </button>
+    </form>
+  </div>
+
+  <div class="news-table">
+    <h3>News List</h3>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Department</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let n of newsList">
+        <td>{{n.title}}</td>
+        <td>{{n.category}}</td>
+        <td>{{n.publishDate}}</td>
+        <td>{{n.department}}</td>
+        <td>{{n.status}}</td>
+        <td>
+          <button class="edit-btn" (click)="editNews(n)">Edit</button>
+          <button class="delete-btn" (click)="deleteNews(n._id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
